@@ -10,9 +10,9 @@
         float bill;
         
         printf("Enter number of units consumed: ");
-        scanf("%d", &units)
+        scanf("%d", &units);
         
-        bill = calculateBill(units)
+        bill = calculateBill(units);
         
         printf("\nELECTRICITY BILL PROGRAM \n");
         printf("========================== \n");
