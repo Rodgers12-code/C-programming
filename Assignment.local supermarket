@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void addProduct();
+void displayProducts();
+
+int main() {
+    addProduct();
+    displayProducts();
+    return 0;
+}
+
+void addProduct() {
+    FILE *fp;
+    int id, quantity;
+    char name[50];
+    float price;
+
+    fp = fopen("products.txt", "w");
+    if (fp == NULL) {
+        printf("Error: could not open products.txt\n");
+        exit(1);
+    }
+
+    for (int i = 1; i <= 5; i++) {
+        printf("\nProduct %d\n", i);
+        printf("Product ID: ");
+        scanf("%d", &id);
+        printf("Product Name: ");
+        scanf("%49s", name);
+        printf("Quantity: ");
+        scanf("%d", &quantity);
+        printf("Unit Price: ");
+        scanf("%f", &price);
+
+        fprintf(fp, "%d %s %d %.2f\n", id, name, quantity, price);
+    }
+
+    fclose(fp);
+    printf("\nProducts saved successfully.\n");
+}
+
+void displayProducts() {
+    FILE *fp;
+    int id, quantity;
+    char name[50];
+    float price;
+
+    fp = fopen("products.txt", "r");
+    if (fp == NULL) {
+        printf("Error: could not open products.txt\n");
+        exit(1);
+    }
+
+    printf("\n%-5s %-15s %-8s %-10s\n", "ID", "Name", "Qty", "Price");
+    while (fscanf(fp, "%d %49s %d %f", &id, name, &quantity, &price) == 4) {
+        printf("%-5d %-15s %-8d %-10.2f\n", id, name, quantity, price);
+    }
+
+    fclose(fp);
+}
