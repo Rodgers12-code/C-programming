@@ -3,8 +3,6 @@
     
     #include <stdio.h>
     
-    #define PI 3.142
-    
     int main(){
         
         int age;
@@ -16,7 +14,7 @@
         printf("Enter income: ");
         scanf("%lf", &income);
         
-        if (age >= 21 &income >= 21000)
+        if (age >= 21 && income >= 21000)
         {
             printf("CONGRATULATIONS YOU QUALIFY FOR A LOAN");
          }
