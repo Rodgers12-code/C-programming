@@ -17,7 +17,7 @@
         
         volume = PI * radius * radius * height;
         
-        surfaceArea = 2 * PI * radius * radius * 2 * PI * radius * height;
+        surfaceArea = (2 * PI * radius * radius) + (2 * PI * radius * height);
         
         printf("\n--- Results ---\n");
         printf("Volume = %.2f\n", volume);
