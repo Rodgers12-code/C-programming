@@ -26,8 +26,8 @@
           if(units <=100){
               amount = units * 10;
         }   
-        else if(units <= 200);
-              amount = (100 * 10) + (units - 200) * 15;
+        else if(units <= 200){
+              amount = (100 * 10) + (units - 100) * 15;
         }  
         else {
               amount = (100 * 10) + (100 * 15) + (units - 200) * 20;
